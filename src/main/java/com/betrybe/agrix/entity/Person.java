@@ -1,18 +1,29 @@
-package com.betrybe.agrix.ebytr.staff.entity;
+package com.betrybe.agrix.entity;
 
 
-import com.betrybe.agrix.ebytr.staff.security.Role;
+import com.betrybe.agrix.security.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Class representing a person.
  */
 @Entity
+@Table(name = "persons")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class Person {
 
   @Id
@@ -20,46 +31,14 @@ public class Person {
   private Long id;
 
   @Column(unique = true)
+  @NonNull
   private String username;
 
+  @NonNull
   private String password;
 
+  @NonNull
   private Role role;
-
-  public Person() {
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public Role getRole() {
-    return role;
-  }
-
-  public void setRole(Role role) {
-    this.role = role;
-  }
 
   @Override
   public boolean equals(Object o) {
