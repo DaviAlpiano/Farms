@@ -42,7 +42,6 @@ public class AuthController {
    */
   @PostMapping("/login")
   public TokenDto login(@RequestBody AuthDto authDto) {
-    System.out.println(authDto);
     UsernamePasswordAuthenticationToken usernamePassword =
         new UsernamePasswordAuthenticationToken(authDto.username(), authDto.password());
 

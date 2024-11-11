@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,8 +60,12 @@ public class FarmController {
    * @return the all farms
    */
   @GetMapping
-  @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('MANAGER') or hasAuthority('USER')")
+  @PreAuthorize("hasAuthority('ROLE_ADMIN')"
+      + "or hasAuthority('ROLE_MANAGER')"
+      + "or hasAuthority('ROLE_USER')")
   public ResponseEntity<List<Farm>> getAllFarms() {
+    System.out.println(SecurityContextHolder.getContext().getAuthentication().getAuthorities());
+
     return ResponseEntity.status(HttpStatus.OK).body(farmService.getAllFarms());
   }
 
