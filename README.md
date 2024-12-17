@@ -1,10 +1,28 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# My Project
+
+# Contexto
+Este projeto trata-se de uma ferramenta para um sistema de gerenciamento de fazendas, plantações e fertilizantes. É possivel criar um user que dependendo do cargo, pode modificar os dados relacionados a fazenda em questão.
+
+## Técnologias usadas
+
+Back-end:
+> Desenvolvido usando: Java, Maven, Spring Boot, JWT, MySQL, Lombok
+
+## Instalando Dependências
+
+```bash
+mvn install
+``` 
+## Executando aplicação
+
+* Para rodar o back-end:
+
+  ```
+    mvn spring-boot:run
+  ```
+
+* Para rodar os tests:
+
+  ```
+    mvn test
+  ```
