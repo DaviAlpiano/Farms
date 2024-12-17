@@ -26,3 +26,8 @@ mvn install
   ```
     mvn test
   ```
+
+## Tabelas
+
+* Tabelas relacionadas as plantações:
+  ![Tabelas](images/Tabelas.png)
